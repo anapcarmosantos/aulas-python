@@ -1,5 +1,5 @@
 morse_code = {
-            'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
     'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.',
     'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
     'Y': '-.--', 'Z': '--..',
@@ -7,8 +7,10 @@ morse_code = {
     '7': '--...', '8': '---..', '9': '----.',
     '.': '.-.-.-', ',': '--..--', '?': '..--..', "'": '.----.', '!': '-.-.--', '/': '-..-.', '(': '-.--.',
     ')': '-.--.-', '&': '.-...', ':': '---...', ';': '-.-.-.', '=': '-...-', '+': '.-.-.', '-': '-....-',
-    '_': '..--.-', '"': '.-..-.', '$': '...-..-', '@': '.--.-.', ' ': '/'
-        }
+    '_': '..--.-', '"': '.-..-.', '$': '...-..-', '@': '.--.-.', ' ': '/',
+      '{': '{','}': '}','(': '(',')': ')',
+}
+
 
 def text_to_morse(text):
     morse = []
@@ -20,7 +22,8 @@ def text_to_morse(text):
                 morse.append(morse_code[char])
     return morse
 
-def morse_to_text(morse = []):
+
+def morse_to_text(morse=[]):
     text = []
     for code in morse:
         if code == " ":
@@ -31,6 +34,7 @@ def morse_to_text(morse = []):
                     text.append(char)
     return ' '.join(text)
 
+
 def text_to_morseV2(text):
     morse = []
     for char in text:
@@ -40,6 +44,7 @@ def text_to_morseV2(text):
             if char.upper() in morse_code:
                 morse.append(morse_code[char.upper()])
     return ','.join(morse)
+
 
 def morse_to_textV2(morse):
     text = []
@@ -54,9 +59,10 @@ def morse_to_textV2(morse):
     return ''.join(text)
 
 
-morse = text_to_morseV2( str( input("Informe o texto para gerar morse:\n") ))
+morse = text_to_morseV2(str(input("Informe o texto para gerar morse:\n")))
 print(morse)
 
-morseDecodificado = morse_to_textV2(str( input("Informe o código morse para decodificar:\n") ))
+morseDecodificado = morse_to_textV2(
+    str(input("Informe o código morse para decodificar:\n")))
 
-print( morseDecodificado)
+print(morseDecodificado)
