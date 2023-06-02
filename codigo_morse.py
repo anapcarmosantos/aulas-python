@@ -54,9 +54,9 @@ def morse_to_textV2(morse):
     return ''.join(text)
 
 
-morse = text_to_morseV2( str( input("Informe o texto para gerar morse\n") ))
+morse = text_to_morseV2( str( input("Informe o texto para gerar morse:::\n") ))
 print(morse)
 
-morseDecodificado = morse_to_textV2(str( input("Informe o código morse para decodificar\n") ))
+morseDecodificado = morse_to_textV2(str( input("Informe o código morse para decodificar:::\n") ))
 
 print( morseDecodificado)
